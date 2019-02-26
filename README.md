@@ -1,6 +1,9 @@
 # GeebOffFirebaseNew
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+What is currently developed:
+
+1. Each player can join a lobby and connect to a firebase database. (We need to add game logic to the game) 
+
 
 ## Development server
 
