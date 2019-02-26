@@ -1,0 +1,9 @@
+<button type="logout" class="btn btn-primary" (click)="signOut()">Logout</button><br>
+<button type="new-game" class="btn btn-primary" (click)="newGame()">New Game</button>
+<form>
+  <div class="form-group">
+    <input #id class="form-control" placeholder="Game ID">
+  </div>
+</form>
+<button type="join-game" class="btn btn-primary" (click)="joinGame(id.value)">Join Game</button>
+<p>Game ID: {{gameId}}</p>
