@@ -1,16 +1,13 @@
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" placeholder="Password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary" (click)="signInWithEmail()">Submit</button>
-</form>
+<div class="container">
+  <form class="form-design">
+    <div class="form-group" style="width: 200px;">
+      <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email" placeholder="Enter email">
+      
+    </div>
+    <div class="form-group" style="width: 200px;">
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" placeholder="Password">
+    </div>
+  
+    <button type="submit" style="width: 200px;" class="btn btn-primary" (click)="signInWithEmail()">Submit</button>
+  </form>
+</div>
