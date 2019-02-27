@@ -1,16 +1,23 @@
 <div class="container">
   <form class="form-design">
-    <div class="form-group" style="width: 200px;">
+    <div class="form-group" style="">
       <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email" placeholder="Enter email">
       
     </div>
-    <div class="form-group" style="width: 200px;">
+    <div class="form-group" style="">
       <input type="password" name="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" placeholder="Password">
     </div>
   
-    <button type="submit" style="width: 200px;" class="btn btn-primary" (click)="signInWithEmail()">Log In</button>
+    <button type="submit" style="border-radius: 15px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.42857;" class="btn btn-primary butt-big" (click)="signInWithEmail()">Log In</button>
     <br />
-    <button type="register" style="width: 200px; margin-top: 15px" class="btn btn-primary" href="/login">Register</button>
+    <button type="register" style="border-radius: 15px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.42857;
+    margin-top: 5px;" class="btn btn-primary butt-big" href="/login">Register</button>
   </form>
   
 </div>

@@ -5,3 +5,38 @@
     color: #ffffff;
     line-height: 1.00em;
 }
+.geeboff {
+    padding-top: 150px;
+}
+.geeboff-img {
+    width: 300px;
+}
+  /* On screens that are 992px or less, set the background color to blue */
+  @media screen and (max-width: 992px) {
+    .geeboff {
+        padding-top: 75px;
+    }
+    .geeboff-img {
+        width: 250px;
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  
+  @media screen and (max-width: 600px) {
+    .geeboff {
+        padding-top: 75px;
+    }
+    .geeboff-img {
+        width: 250px;
+    }
+}
+  @media screen and (max-width: 1400px) {
+    .geeboff {
+        padding-top: 75px;
+    }
+    .butt-big {
+        width: 250px;
+
+    }
+}

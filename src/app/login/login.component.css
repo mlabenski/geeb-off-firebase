@@ -1,9 +1,89 @@
 .container{
     width: 500px;
     position: relative;
-    left : 70%;
+    left : 53%;
     margin-left: -200px;
   }
   .register-link {
     margin-left: 10px;
+}
+  
+@media screen and (max-width: 1920px) {
+    .container {
+        width: 300px;
+        position: relative;
+        left : 53%;
+        margin-left: -200px;
+    }
+    .butt-big {
+        width: 275px;
+
+    }
+  }
+
+@media screen and (max-width: 1400px) {
+    .container {
+        width: 300px;
+        position: relative;
+        left : 57%;
+        margin-left: -200px;
+    }
+    .butt-big {
+        width: 275px;
+
+    }
+  }
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 1000px) {
+    .container {
+        width: 300px;
+        position: relative;
+        left : 59%;
+        margin-left: -200px;
+    }
+    .butt-big {
+        width: 275px;
+
+    }
+  }
+
+  /* On screens that are 992px or less, set the background color to blue */
+  @media screen and (max-width: 850px) {
+    .container {
+        width: 275px;
+        position: relative;
+        left : 60%;
+        margin-left: -200px;
+    }
+    .butt-big {
+        width: 200px;
+
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  
+  @media screen and (max-width: 750px) {
+    .container {
+        width: 235px;
+        position: relative;
+        left : 64%;
+        margin-left: -200px;
+    }
+    .butt-big {
+        width: 200px;
+
+    }
+}
+  @media screen and (max-width: 600px) {
+    .container {
+        width: 232px;
+        position: relative;
+        left : 70%;
+        margin-left: -200px;
+    }
+    .butt-big {
+        width: 200px;
+
+    }
 }
