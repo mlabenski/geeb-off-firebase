@@ -11,12 +11,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { RegisterComponent } from './register/register.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

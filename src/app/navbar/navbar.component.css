@@ -1,0 +1,20 @@
+.navbar {
+    margin-bottom: 20px;
+    background-color: #406C82;
+}
+
+.nav-item {
+    padding: 5px;
+}
+.navbar-brand {
+    color: #24AC3B;
+    font-size: 32px;
+}
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}

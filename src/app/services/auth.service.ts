@@ -27,6 +27,10 @@ export class AuthService {
     return this.fb.auth.signInWithEmailAndPassword(email, pass);
   }
 
+  registerWithEmail(email: string, pass: string) {
+    return this.fb.auth.createUserWithEmailAndPassword(email, pass);
+  }
+
   signOut() {
     this.fb.auth.signOut();
   }
