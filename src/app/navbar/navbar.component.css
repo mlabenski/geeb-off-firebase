@@ -18,3 +18,7 @@
     border: 1px solid transparent;
     border-radius: .25rem;
 }
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }

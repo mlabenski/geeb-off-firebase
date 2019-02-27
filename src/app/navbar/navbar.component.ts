@@ -23,4 +23,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["login"]);
   }
 
+  onFileSelected(event) {
+    console.log(event);
+  }
+
+  
+
 }
