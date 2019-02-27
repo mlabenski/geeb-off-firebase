@@ -1,8 +1,8 @@
 .container{
-    width: 600px;
+    width: 500px;
     position: relative;
     left : 70%;
-    margin-left: -300px;
+    margin-left: -200px;
   }
   .register-link {
     margin-left: 10px;
