@@ -10,10 +10,6 @@
     "e2e": "ng e2e",
     "postinstall": "ng build --prod"
   },
-  "engines": {
-    "node": "10.14.1",
-    "npm": "3.10.10"
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
@@ -62,5 +58,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
+  },
+  "engines": {
+    "node": "10.14.1",
+    "npm": "3.10.10"
   }
 }
