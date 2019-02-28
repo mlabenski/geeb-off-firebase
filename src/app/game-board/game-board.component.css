@@ -1,0 +1,39 @@
+span {
+    font: arial;
+    font-size: 50px;
+}
+.top-row {
+    border-bottom: 1px black solid;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+}
+.middle-row {
+    border-bottom: 1px black solid;
+    border-top: 1px black solid;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+}
+.bottom-row {
+    border-top: 1px black solid;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+}
+.left-col {
+    text-align: center;
+    border-right: 1px black solid;
+    width: 70px;
+}
+.middle-col {
+    text-align: center;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    width: 70px;
+}
+.right-col {
+    text-align: center;
+    border-left: 1px black solid;
+    width: 70px;
+}

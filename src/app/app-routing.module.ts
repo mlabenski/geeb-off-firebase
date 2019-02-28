@@ -5,11 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IsAuthenticatedGuard } from './is-authenticated.guard';
 import { RegisterComponent } from './register/register.component';
+import { QueueComponent } from './queue/queue.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'queue', component: QueueComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [IsAuthenticatedGuard] }
 ];
 

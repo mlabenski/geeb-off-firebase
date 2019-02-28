@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
+import { UseExistingWebDriver } from 'protractor/built/driverProviders';
 
 @Injectable({
   providedIn: "root"
@@ -8,12 +9,14 @@ import { Observable } from 'rxjs';
 export class AuthService {
   authenticated: Observable<boolean>;
   userId: string;
+  numOfGeebs: number;
 
   constructor(public fb: AngularFireAuth) {
     this.authenticated = new Observable<boolean>((obs) => {
       fb.auth.onAuthStateChanged((u) => {
         if (u) {
           this.userId = u.uid;
+          this.numOfGeebs = 0;
           obs.next(true);
         } else {
           this.userId = '';
@@ -22,6 +25,7 @@ export class AuthService {
       });
     });
   }
+
 
   signInWithEmail(email: string, pass: string) {
     return this.fb.auth.signInWithEmailAndPassword(email, pass);

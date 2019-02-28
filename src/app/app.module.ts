@@ -13,6 +13,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { GameComponent } from './game/game.component';
+import { QueueComponent } from './queue/queue.component';
+import { GameBoardComponent } from './game-board/game-board.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    GameComponent,
+    QueueComponent,
+    GameBoardComponent
   ],
   imports: [
     BrowserModule,
