@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class NavbarComponent implements OnInit {
 
-  private isAuthenticated$: Observable<boolean>;
+  public isAuthenticated$: Observable<boolean>;
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(public auth: AuthService, public router: Router) { }
 
   ngOnInit() {
     this.isAuthenticated$ = this.auth.isAuthenticated();

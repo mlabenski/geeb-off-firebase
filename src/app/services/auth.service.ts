@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
   providedIn: "root"
 })
 export class AuthService {
-  private authenticated: Observable<boolean>;
-  private userId: string;
+  authenticated: Observable<boolean>;
+  userId: string;
 
-  constructor(private fb: AngularFireAuth) {
+  constructor(public fb: AngularFireAuth) {
     this.authenticated = new Observable<boolean>((obs) => {
       fb.auth.onAuthStateChanged((u) => {
         if (u) {

@@ -10,9 +10,9 @@ import { GameService } from '../services/game.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private auth: AuthService, private router: Router, private games: GameService, private change: ChangeDetectorRef) { }
+  constructor(public auth: AuthService, public router: Router, public games: GameService, private change: ChangeDetectorRef) { }
 
-  private gameId: string = "";
+  public gameId: string = "";
 
   ngOnInit() {
     this.loadGameID();

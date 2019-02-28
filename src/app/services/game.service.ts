@@ -8,7 +8,7 @@ import { v4 as uuid } from 'uuid';
   providedIn: 'root'
 })
 export class GameService {
-  constructor(private auth: AuthService, private db: AngularFireDatabase) { }
+  constructor(public auth: AuthService, public db: AngularFireDatabase) { }
 
 
   generateNewID(){
