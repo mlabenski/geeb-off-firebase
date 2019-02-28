@@ -87,3 +87,63 @@
 
     }
 }
+
+.geeboff {
+    padding-top: 150px;
+}
+.geeboff-img {
+    width: 375px;
+    margin-left: 20px;
+}
+  /* On screens that are 992px or less, set the background color to blue */
+  @media screen and (max-width: 992px) {
+    .geeboff {
+        padding-top: 75px;
+    }
+    .geeboff-img {
+        width: 275px;
+        margin-left: 60px;
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  
+  @media screen and (max-width: 600px) {
+    .geeboff {
+        padding-top: 75px;
+    }
+    .geeboff-img {
+        width: 275px;
+        margin-left: -30px;
+    }
+
+    @media screen and (max-width: 700px) {
+        .geeboff {
+            padding-top: 75px;
+        }
+        .geeboff-img {
+            width: 275px;
+            margin-left: -30px;
+        }
+        
+    }
+    @media screen and (max-width: 850px) {
+        .geeboff {
+            padding-top: 75px;
+        }
+        .geeboff-img {
+            width: 275px;
+            margin-left: -35px;
+        }
+        
+    }
+    @media screen and (max-width: 1200px) {
+        .geeboff {
+            padding-top: 75px;
+        }
+        .geeboff-img {
+            width: 275px;
+            margin-left: 25px;
+        }
+    }
+}
