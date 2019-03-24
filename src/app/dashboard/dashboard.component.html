@@ -10,10 +10,48 @@
         <div class="col-md-auto">
           <button [disabled]="!inGame()" type="end-game" class="btn btn-primary" (click)="endGame()">End Game</button>
         </div>
+
         <div class="col-md-auto">
-          <button [disabled]="inGame()" type="new-game" class="btn btn-primary" (click)="newGame()">New Game</button>
+            <button [disabled]="inGame()" type="change-settings" class="btn btn-primary" data-toggle="modal" data-target="#createGame">Create Game</button>
+        </div> 
+
+        <div class="modal fade" id="createGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="label" style="text-align:center">Create a Match</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            
+              <div class="modal-body">
+                  <div class="container">
+                      <form #settingForm="ngForm">
+                        <div class="form-group">
+                          <label for="timePerGeeb">Time per Geeb</label>
+                          <select class="form-control"  [(ngModel)]="timePerGeeb" name="timePerGeeb" id="timePerGeeb" required>
+                          <option *ngFor="let t of time" [value]="t">{{t}}</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="decrease">Decrease time per round</label>
+                            <select class="form-control"  [(ngModel)]="decrease" name="decrease" id="decrease" required>
+                            <option *ngFor="let t of timeDecrease" [value]="t">{{t}}</option>
+                            </select>
+                          </div>
+                   
+                        <button style="margin-left: 35%" [disabled]="inGame()" type="submit" class="btn btn-primary" (click)="newGame(timePerGeeb, decrease)">Start Game</button>
+                      </form>
+                  </div>
+              </div>
+
+            </div>
+          </div>
         </div>
-    </div>
+
+     </div>
+
       
     <div class="col-md-auto">
         <div class="input-group mb-3">

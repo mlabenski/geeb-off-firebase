@@ -4,7 +4,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from './services/auth.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GameComponent } from './game/game.component';
 import { QueueComponent } from './queue/queue.component';
 import { GameBoardComponent } from './game-board/game-board.component';
+import { CreateGameComponent } from './dashboard/create-game/create-game.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GameBoardComponent } from './game-board/game-board.component';
     NavbarComponent,
     GameComponent,
     QueueComponent,
-    GameBoardComponent
+    GameBoardComponent,
+    CreateGameComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { GameBoardComponent } from './game-board/game-board.component';
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

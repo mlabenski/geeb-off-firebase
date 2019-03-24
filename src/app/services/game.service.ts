@@ -3,6 +3,8 @@ import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angular
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { v4 as uuid } from 'uuid';
+import { DataSnapshot } from '@angular/fire/database/interfaces';
+import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +19,13 @@ export class GameService {
     private EMPTY_BOARD = ["", "", "", "", "", "", "", "", ""]; 
     private board$: Observable<string[]>;
     private board: string[] = this.EMPTY_BOARD;
+    private matchSettings$: Observable<string[]>;
     private piece: string = "";
+    private timePerRound: number;
+    private decrease: string;
+    private matchSettings: string[];
+    private numOfPlayers: 0;
+
 
   constructor(public auth: AuthService, public db: AngularFireDatabase) { 
     this.gameId$ = new Observable(o => {
@@ -34,6 +42,7 @@ export class GameService {
           this.gameId = "none";
         });
       });
+
 
       this.board$ = new Observable(o => {
         this.gameId$.subscribe(id => {
@@ -78,23 +87,21 @@ export class GameService {
 
   //Checks to see if user is currently in a game: Will create a new game if they are not. 
   // Later may be changed to include deleting a current game. we can also delete a user. 
-  newGame(): void {
+  newGame(time, increment): void {
     console.log("new game");
     const uid = this.auth.getUserId()
     let id = "";
     let require: any;
+    console.log(this.numOfPlayers);
 
-    //Need to figure out how to get random ID's
 
     this.db.database.ref(`users/${uid}/game`).once('value').then(s => {
       if (!s.exists()) {
         id = uuid();
 
         // writing to database
-        this.db.object(`games/${id}/board`).update({
-            0: "", 1: "", 2: "",
-            3: "", 4: "", 5: "",
-            6: "", 7: "", 8: ""
+        this.db.object(`games/${id}/matchSettings`).update({
+            timePerRound: "", decrease: "", locked: false
           });
 
           this.db.object(`users/${uid}`).update({
@@ -103,15 +110,39 @@ export class GameService {
           // the creator of the game should be "player 1's"
         this.db.object(`games/${id}/${uid}`).set("Player 1");
         this.db.object(`games/${id}/user1`).set(uid);
+        this.changeSettings(time, increment);
       }
     });
   }
+
+  changeSettings(time, increment) : void {
+    let timePerRound = time;
+    let decrease= increment;
+    let allowChange;
+    let count = 0;
+
+    // this.db.database.ref(`games/${this.gameId}/matchSettings/locked`).on('value', snapshot => {
+    //   allowChange = snapshot.val();
+    //   count ++;
+    //   console.log(count);
+      // if (allowChange == true) {
+      //   alert("You can only change the settings once!");
+      //   return;
+      // }
+
+        this.db.object(`games/${this.gameId}/matchSettings`).update({
+          timePerRound: time, decrease: increment, locked: true
+        });
+        console.log("game settings updated");
+  }
+
   deleteGame(): void {
     const uid = this.auth.getUserId()
       console.log(this.gameId);
     this.db.object(`games/${this.gameId}`).remove();
     this.db.object(`users/${uid}/game`).remove();
   }
+
 
 
   //Get the current game ID that a user is.
