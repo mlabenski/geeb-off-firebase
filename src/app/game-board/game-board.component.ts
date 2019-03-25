@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class GameBoardComponent implements OnInit {
 
-  private board$: Observable<string[]>;
+  public board$: Observable<string[]>;
   public board: string[] = ["", "", "", "", "", "", "", "", ""];
 
-  constructor(private games: GameService, private change: ChangeDetectorRef) { }
+  constructor(public games: GameService, public change: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.board$ = this.games.getBoard();
