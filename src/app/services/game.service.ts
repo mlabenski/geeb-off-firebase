@@ -10,22 +10,22 @@ import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
   providedIn: 'root'
 })
 export class GameService {
-    private turn$: Observable<string>;
-    private timeRemaining: number;
-    private gameId$: Observable<string>;
-    private games$: Observable<string>;
-    private gameId: string = "";
-    private numOfRounds: 5;
-    private winner$: Observable<string>;
-    private EMPTY_BOARD = ["", "", "", "", "", "", "", "", ""]; 
-    private board$: Observable<string[]>;
-    private board: string[] = this.EMPTY_BOARD;
-    private matchSettings$: Observable<string[]>;
-    private piece: string = "";
-    private timePerRound: number;
-    private decrease: string;
-    private matchSettings: string[];
-    private numOfPlayers: 0;
+    public turn$: Observable<string>;
+    public timeRemaining: number;
+    public gameId$: Observable<string>;
+    public games$: Observable<string>;
+    public gameId: string = "";
+    public numOfRounds: 5;
+    public winner$: Observable<string>;
+    public EMPTY_BOARD = ["", "", "", "", "", "", "", "", ""]; 
+    public board$: Observable<string[]>;
+    public board: string[] = this.EMPTY_BOARD;
+    public matchSettings$: Observable<string[]>;
+    public piece: string = "";
+    public timePerRound: number;
+    public decrease: string;
+    public matchSettings: string[];
+    public numOfPlayers: 0;
 
 
   constructor(public auth: AuthService, public db: AngularFireDatabase) { 
