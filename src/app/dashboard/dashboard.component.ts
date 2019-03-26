@@ -12,32 +12,36 @@ import { FormsModule }   from '@angular/forms';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  private gameId$: Observable<string>;
-  private gameId: string;
-  private turn$: Observable<string>;
+  public gameId$: Observable<string>;
+  public gameId: string;
+  public turn$: Observable<string>;
   public gameInfo: string = "";
-  private timePerGeeb: number;
-  private decrease: number;
-  private showSettings= false;
-  private time: number[] = [45,60,90];
-  private timeDecrease: number[] = [5,10,20];
-  private chosenTime;
-  private chosenDecrease;
+  public timePerGeeb: number;
+  public  game;
+  public decrease: number;
+  public showSettings= false;
+  public time: number[] = [45,60,90];
+  public timeDecrease: number[] = [5,10,20];
+  public games$: Observable<string>;
+  public chosenTime;
+  public chosenDecrease;
   submitted = false;
 
-  constructor(private games: GameService, public router: Router, private auth: AuthService, private change: ChangeDetectorRef) { }
+  constructor(public games: GameService, public router: Router, public auth: AuthService, public change: ChangeDetectorRef) { }
 
 
   ngOnInit(): void {
-
-    
     this.gameId$ = this.games.getGame();
     this.gameId$.subscribe(o => {
       this.gameId = o;
       this.change.detectChanges();
     });
+    this.games$ = this.games.getListOfGames();
+    this.games$.subscribe(o => {
+      this.game = o;
+      this.change.detectChanges();
+    });
 
-    
     this.turn$ = this.games.getTurn();
     this.turn$.subscribe(o => {
       if (this.inGame()) {
@@ -85,4 +89,9 @@ export class DashboardComponent implements OnInit {
   itemSelected(item){
     console.log(item);
   }
+  displayMatches(){
+    this.games$ = this.games.getListOfGames();
+    console.log("test");
+  }
+
 }

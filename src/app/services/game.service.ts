@@ -13,6 +13,7 @@ export class GameService {
     private turn$: Observable<string>;
     private timeRemaining: number;
     private gameId$: Observable<string>;
+    private games$: Observable<string>;
     private gameId: string = "";
     private numOfRounds: 5;
     private winner$: Observable<string>;
@@ -41,6 +42,14 @@ export class GameService {
           o.next("none");
           this.gameId = "none";
         });
+      });
+
+      this.games$ = new Observable(o => {
+        this.db.list(`/games`)
+        .valueChanges()
+        .subscribe(res => {
+          console.log(res);
+        })
       });
 
 
@@ -148,6 +157,9 @@ export class GameService {
   //Get the current game ID that a user is.
   getGame(): Observable<string> {
     return this.gameId$;
+  }
+  getListOfGames(): Observable<string> {
+    return this.games$;
   }
   getTurn(): Observable<string> {
     return this.turn$;
