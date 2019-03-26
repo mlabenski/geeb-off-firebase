@@ -5,6 +5,7 @@ import { AuthService } from './services/auth.service';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularAgoraRtcModule, AgoraConfig } from 'angular-agora-rtc'; // Add
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { GameComponent } from './game/game.component';
 import { QueueComponent } from './queue/queue.component';
 import { GameBoardComponent } from './game-board/game-board.component';
-import { CreateGameComponent } from './dashboard/create-game/create-game.component';
+
+import { VideoStreamComponent } from './dashboard/video-stream/video-stream.component';
+
+
+const agoraConfig: AgoraConfig = {
+  AppID: '54085b6ecc974979a7202cfc3656ed79',
+};
 
 @NgModule({
   declarations: [
@@ -28,7 +35,7 @@ import { CreateGameComponent } from './dashboard/create-game/create-game.compone
     GameComponent,
     QueueComponent,
     GameBoardComponent,
-    CreateGameComponent
+    VideoStreamComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,8 @@ import { CreateGameComponent } from './dashboard/create-game/create-game.compone
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularAgoraRtcModule.forRoot(agoraConfig)
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

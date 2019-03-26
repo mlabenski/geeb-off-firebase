@@ -3,7 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { GameService } from '../services/game.service';
 import { Observable } from 'rxjs';
-import { CreateGameComponent } from './create-game/create-game.component';
+import { VideoStreamComponent } from './video-stream/video-stream.component';
 import { FormsModule }   from '@angular/forms';
 
 @Component({
@@ -34,11 +34,6 @@ export class DashboardComponent implements OnInit {
     this.gameId$ = this.games.getGame();
     this.gameId$.subscribe(o => {
       this.gameId = o;
-      this.change.detectChanges();
-    });
-    this.games$ = this.games.getListOfGames();
-    this.games$.subscribe(o => {
-      this.game = o;
       this.change.detectChanges();
     });
 
@@ -88,10 +83,6 @@ export class DashboardComponent implements OnInit {
   }
   itemSelected(item){
     console.log(item);
-  }
-  displayMatches(){
-    this.games$ = this.games.getListOfGames();
-    console.log("test");
   }
 
 }

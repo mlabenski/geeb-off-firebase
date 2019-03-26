@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularAgoraRtcService, Stream } from 'angular-agora-rtc'; // Add
 
 @Component({
   selector: 'app-game',

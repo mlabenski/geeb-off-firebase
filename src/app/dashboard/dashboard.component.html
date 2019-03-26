@@ -14,9 +14,6 @@
         <div class="col-md-auto">
             <button [disabled]="inGame()" type="change-settings" class="btn btn-primary" data-toggle="modal" data-target="#createGame">Create Game</button>
         </div> 
-        <div class="col-md-auto">
-            <button [disabled]="displayMatches()" type="display-games" class="btn btn-primary">Display Matches</button>
-        </div> 
 
         <div class="modal fade" id="createGame" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -69,5 +66,5 @@
       </div>
     </div>
     <div class="row justify-content-md-center board-container">
-        <app-game-board></app-game-board>
+        <app-video-stream></app-video-stream>
       </div>
