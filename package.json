@@ -13,7 +13,6 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
-    "@angular/cli": "^7.3.3",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/compiler-cli": "^7.2.6",
@@ -30,6 +29,7 @@
     "firebase": "^5.8.4",
     "jquery": "^3.3.1",
     "path": "^0.12.7",
+    "popper": "^1.0.1",
     "popper.js": "^1.14.7",
     "rxjs": "~6.3.3",
     "shortid": "^2.2.14",
@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
-    "@angular/cli": "^7.3.3",
+    "@angular/cli": "^7.3.6",
     "@angular/compiler-cli": "^7.2.6",
     "@angular/language-service": "~7.2.0",
     "@types/jasmine": "~2.8.8",
@@ -50,7 +50,7 @@
     "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.0.0",
+    "karma": "^4.0.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
